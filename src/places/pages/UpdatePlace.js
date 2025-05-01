@@ -6,6 +6,7 @@ import {
 } from "../../shared/util/validators";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
+import "./PlaceForm.css";
 
 const DUMMY_PLACES = [
   {
@@ -49,13 +50,13 @@ const UpdatePlace = (props) => {
   }
 
   return (
-    <form>
+    <form className="place-form">
       <Input
         id="title"
         element="input"
         type="text"
         label="Title"
-        validators={[VALIDATOR_REQUIRE]}
+        validators={[VALIDATOR_REQUIRE()]}
         errorText="Please enter a valid title."
         value={identifiedPlace.title}
         valid={true}
