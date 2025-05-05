@@ -12,6 +12,7 @@ const Map = (props) => {
   return (
     <div className={`map ${props.className}`} style={props.style}>
       <MapComponent
+        // eslint-disable-next-line
         style="mapbox://styles/mapbox/streets-v9"
         containerStyle={{
           height: "100%",
