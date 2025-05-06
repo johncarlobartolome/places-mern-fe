@@ -31,7 +31,7 @@ const Auth = () => {
   const swithModeHandler = () => {
     if (!isLoginMode) {
       setFormData(
-        { ...formState.inputs, name: undefined },
+        { ...formState.inputs, name: undefined, image: undefined },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
     } else {
@@ -41,6 +41,10 @@ const Auth = () => {
           name: {
             value: "",
             isValid: false,
+          },
+          image: {
+            value: null,
+            isValiid: false,
           },
         },
         false
@@ -103,7 +107,9 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
-          {!isLoginMode && <ImageUpload center id="image" />}
+          {!isLoginMode && (
+            <ImageUpload center id="image" onInput={inputHandler} />
+          )}
           <Input
             id="email"
             element="input"
